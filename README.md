@@ -38,7 +38,7 @@ To install the Wazuh agent on Linux using Bash:
 
 3. Run the following command to execute the script:
    
-```Bash
+```Shell
   chomod +x Install_Agent.sh
   ./Install_Agent.sh
 ```
