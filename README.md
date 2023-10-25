@@ -25,7 +25,7 @@ To install the Wazuh agent on Windows using PowerShell:
 3. Run the following command to execute the script:
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; .\Install Agent.ps1
+Set-ExecutionPolicy Bypass; .\"Install Agent.ps1"
 
 ```
 ### Linux (Bash)
