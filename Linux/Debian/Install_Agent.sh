@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#author: https://github.com/MrGulczu
 stty size | perl -ale 'print "-"x$F[1]'
 echo "Agent installation"
 
