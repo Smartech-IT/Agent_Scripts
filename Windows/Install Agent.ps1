@@ -12,7 +12,7 @@ if ($Start.ToUpper() -eq "N")
     Exit 5
 }
 
-Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.5.2-1.msi -OutFile ${env:tmp}\wazuh-agent.msi; msiexec.exe /i ${env:tmp}\wazuh-agent.msi /q WAZUH_MANAGER='178.218.246.60' WAZUH_REGISTRATION_SERVER='178.218.246.60' WAZUH_AGENT_GROUP='Agent_Group' WAZUH_AGENT_NAME='Agent_name' 
+Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.6.0-1.msi -OutFile ${env.tmp}\wazuh-agent; msiexec.exe /i ${env.tmp}\wazuh-agent /q WAZUH_MANAGER='178.218.246.60' WAZUH_REGISTRATION_SERVER='178.218.246.60' WAZUH_AGENT_GROUP='Agent_Group' WAZUH_AGENT_NAME='Agent_name' 
 $Insert_Test = $true
 Write-Host ""
 Write-Host "Provide necessary information:"
@@ -42,7 +42,7 @@ $content[23] = "        <groups>$Wazuh_Agent_Group</groups>"
 
 Set-Content -Path "C:\Program Files (x86)\ossec-agent\ossec.conf" -Value $content
 
-NET START Wazuh
+NET START WazuhSvc
 
 Write-Host $line
 Write-Host "In case of any problems, please contact us at support@smartech-it.eu"
