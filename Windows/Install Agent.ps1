@@ -22,7 +22,7 @@ while ($Insert_Test) {
     $Client_port = Read-Host -Prompt "Enter provided client port "
     $Enrollment_port = Read-Host -Prompt "Enter provided enrollment port "
     $Agent_name = Read-Host -Prompt "Enter name for Wazuh Agent "
-    $Wazuh_Agent_Group = Read-Host -Prompt "Enter name for Wazuh Agent "
+    $Wazuh_Agent_Group = Read-Host -Prompt "Enter group name for Wazuh Agent "
     Write-Host ""
     $YesorNo = Read-Host -Prompt "Those are correct? [Y/N] "
     Write-Host ""
