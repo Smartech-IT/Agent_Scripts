@@ -37,8 +37,8 @@ $content = Get-Content -Path "C:\Program Files (x86)\ossec-agent\ossec.conf"
 $content[10] = "      <address>178.218.246.60</address>"
 $content[11] = "      <port>$Client_port</port>"
 $content[20] = "        <manager_address>178.218.246.60</manager_address>`n        <port>$Enrollment_port</port>"
-$content[21] = "        <agent_name>$Agent_name</agent_name>"
-$content[22] = "        <groups>$Wazuh_Agent_Group</groups>"
+$content[22] = "        <agent_name>$Agent_name</agent_name>"
+$content[23] = "        <groups>$Wazuh_Agent_Group</groups>"
 
 Set-Content -Path "C:\Program Files (x86)\ossec-agent\ossec.conf" -Value $content
 
