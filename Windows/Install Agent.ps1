@@ -12,7 +12,7 @@ if ($Start.ToUpper() -eq "N")
     Exit 5
 }
 
-Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.6.0-1.msi -OutFile ${env.tmp}\wazuh-agent; msiexec.exe /i ${env.tmp}\wazuh-agent /q WAZUH_MANAGER='178.218.246.60' WAZUH_AGENT_GROUP='AgentGroup' WAZUH_AGENT_NAME='Agentname' WAZUH_REGISTRATION_SERVER='178.218.246.60'  
+Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.6.0-1.msi -OutFile ${env.tmp}\wazuh-agent; msiexec.exe /i ${env.tmp}\wazuh-agent /q WAZUH_MANAGER='83.168.108.76' WAZUH_AGENT_GROUP='AgentGroup' WAZUH_AGENT_NAME='Agentname' WAZUH_REGISTRATION_SERVER='178.218.246.60'  
 $Insert_Test = $true
 Write-Host ""
 Write-Host "Provide necessary information:"
