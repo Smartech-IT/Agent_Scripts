@@ -9,7 +9,7 @@ if [ "$Start" == "N" ] || [ "$Start" == "n" ];
         exit 0
     fi
 stty size | perl -ale 'print "-"x$F[1]'
-curl -o wazuh-agent-4.6.0-1.x86_64.rpm https://packages.wazuh.com/4.x/yum/wazuh-agent-4.6.0-1.x86_64.rpm && sudo WAZUH_MANAGER='178.218.246.60' WAZUH_AGENT_GROUP='Agent_Group' WAZUH_AGENT_NAME='Agent_Name' rpm -ihv wazuh-agent-4.6.0-1.x86_64.rpm
+curl -o wazuh-agent-4.6.0-1.x86_64.rpm https://packages.wazuh.com/4.x/yum/wazuh-agent-4.6.0-1.x86_64.rpm && sudo WAZUH_MANAGER='83.168.108.76' WAZUH_AGENT_GROUP='Agent_Group' WAZUH_AGENT_NAME='Agent_Name' rpm -ihv wazuh-agent-4.6.0-1.x86_64.rpm
 isok=true
 while $isok
 do
