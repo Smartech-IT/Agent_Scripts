@@ -12,7 +12,7 @@ if ($Start.ToUpper() -eq "N")
     Exit 5
 }
 
-Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.6.0-1.msi -OutFile ${env.tmp}\wazuh-agent; msiexec.exe /i ${env.tmp}\wazuh-agent /q WAZUH_MANAGER='83.168.108.76' WAZUH_AGENT_GROUP='AgentGroup' WAZUH_AGENT_NAME='Agentname' WAZUH_REGISTRATION_SERVER='178.218.246.60'  
+Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.8.0-1.msi -OutFile ${env.tmp}\wazuh-agent; msiexec.exe /i ${env.tmp}\wazuh-agent /q WAZUH_MANAGER='83.168.108.76' WAZUH_AGENT_GROUP='AgentGroup' WAZUH_AGENT_NAME='Agentname' 
 $Insert_Test = $true
 Write-Host ""
 Write-Host "Provide necessary information:"
@@ -36,7 +36,7 @@ $content = Get-Content -Path "C:\Program Files (x86)\ossec-agent\ossec.conf"
 
 $content[10] = "      <address>83.168.108.76</address>"
 $content[11] = "      <port>$Client_port</port>"
-$content[18] = "      <enrollment>`n        <manager_address>178.218.246.60</manager_address>`n        <port>$Enrollment_port</port>`n        <agent_name>$Agent_name</agent_name>`n        <groups>$Wazuh_Agent_Group</groups>`n      </enrollment>`n  </client>"
+$content[18] = "      <enrollment>`n        <enable>yes</enable>`n      <manager_address>83.168.108.7</manager_address>`n        <port>$Enrollment_port</port>`n        <agent_name>$Agent_name</agent_name>`n        <groups>$Wazuh_Agent_Group</groups>`n      </enrollment>`n  </client>"
 
 Set-Content -Path "C:\Program Files (x86)\ossec-agent\ossec.conf" -Value $content
 
