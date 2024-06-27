@@ -19,8 +19,6 @@ Write-Host "Provide necessary information:"
 Write-Host ""
 Write-Host $line
 while ($Insert_Test) {
-    $Client_port = Read-Host -Prompt "Enter provided client port "
-    $Enrollment_port = Read-Host -Prompt "Enter provided enrollment port "
     $Agent_name = Read-Host -Prompt "Enter name for Wazuh Agent "
     $Wazuh_Agent_Group = Read-Host -Prompt "Enter group name for Wazuh Agent "
     Write-Host ""
@@ -33,7 +31,7 @@ while ($Insert_Test) {
 }
 Write-Host $line
 Start-Sleep -s 15
-Remove-item C:\Program Files (x86)\ossec-agent\ossec.conf
+Remove-item "C:\Program Files (x86)\ossec-agent\ossec.conf"
 
 $url = "https://raw.githubusercontent.com/Smartech-IT/Agent_Scripts/main/Windows/Windows10%2611/ossec.conf"
 $file_path = "C:\Program Files (x86)\ossec-agent\ossec.conf"
