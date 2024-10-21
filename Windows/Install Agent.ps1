@@ -33,7 +33,7 @@ Write-Host $line
 Start-Sleep -s 15
 Remove-item "C:\Program Files (x86)\ossec-agent\ossec.conf"
 
-$url = "https://raw.githubusercontent.com/Smartech-IT/Agent_Scripts/main/Windows/Windows10%2611/ossec.conf"
+$url = "https://raw.githubusercontent.com/Smartech-IT/Agent_Scripts/main/Windows/ossec.conf"
 $file_path = "C:\Program Files (x86)\ossec-agent\ossec.conf"
 Invoke-WebRequest $url -OutFile $file_path
 $content = Get-Content -Path "C:\Program Files (x86)\ossec-agent\ossec.conf"
